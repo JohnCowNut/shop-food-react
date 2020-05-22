@@ -12,8 +12,8 @@ const Navigation = () => {
                 <li >
                     <NavStyle to="/" link="true">Home</NavStyle>
                 </li>
-                <li>
-                    <NavStyle to="/overview" link="true">Food</NavStyle>
+                <li> 
+                    <NavStyle to="/collection" link="true">Food</NavStyle>
                 </li>
                 <li>
                     <NavStyle to="/login" link="true">Login</NavStyle>
