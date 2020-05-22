@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {Switch , Route} from 'react-router-dom';
+import {GlobalStyle} from './global.styles';
+import Navigation from './components/navigation/navigation.component';
+import HomePage from './pages/homepage/homepage.component';
+import SignInAndSignUp from './pages/sign-in-sign-up/sign-in-sign-up.component'
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      currentUser  :null,
+    }
+  }
+  render() {
+    return (
+      <div>
+          <GlobalStyle />
+          <Navigation />
+          <Switch>
+            <Route exact path = "/" component = {HomePage}/>
+            <Route exact path = "/login" component = {SignInAndSignUp} />
+          </Switch>
+      </div>
+    )
+  }
 }
 
 export default App;
