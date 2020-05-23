@@ -1,6 +1,7 @@
 import React from 'react';
 import FormInput from '../form-input/form-input.component';
 import ButtonLink from '../custom-link/custom-link.component';
+import {signInWithGoogle} from '../../firebase/firebase.utilis';
 class SignIn extends React.Component {
     constructor(props) {
         super(props);
@@ -48,7 +49,7 @@ class SignIn extends React.Component {
                     <br/>
                     <div>
                         <ButtonLink as="button" type="submit" className="mb-md" sign ="true">Sign In</ButtonLink>
-                        <ButtonLink as="button" type="submit" sign ="true"> Sign In With Google</ButtonLink>
+                        <ButtonLink as="button" onClick={() => signInWithGoogle()} sign ="true"> Sign In With Google</ButtonLink>
                     </div>
                 </form>
              </div>
