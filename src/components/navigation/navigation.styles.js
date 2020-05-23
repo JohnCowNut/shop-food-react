@@ -34,6 +34,7 @@ const Navlink = css`
         background-image: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%);
         -webkit-text-fill-color:transparent;
         transform: scale(1.05);
+        cursor: pointer;
     }
     
 `

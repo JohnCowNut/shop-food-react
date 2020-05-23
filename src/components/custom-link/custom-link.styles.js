@@ -97,6 +97,7 @@ const CustomSignInSignUp = css`
     padding:  2rem;
     border:none;
     outline: none;
+    cursor: pointer;
     box-shadow: 0 1rem 2.5rem rgba(0,0,0,0.3);
     &:hover{
         cursor: pointer;

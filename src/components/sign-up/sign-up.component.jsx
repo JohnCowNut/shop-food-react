@@ -1,7 +1,7 @@
 import React from 'react'; 
 import FormInput from '../form-input/form-input.component';
 import ButtonLink from '../custom-link/custom-link.component';
-
+import { auth , createUserProfileDocument } from '../../firebase/firebase.utilis';
 class SignUp extends React.Component {
     constructor(props) {
         super(props);
@@ -14,7 +14,8 @@ class SignUp extends React.Component {
         }
     }
     
-    handleSubmit = e => {
+    handleSubmit = async e => {
+        e.preventDefault();
         const {email , displayName , password , confirmPassword} = this.state;
         if( password !== confirmPassword) {
             alert("Password don't match");
@@ -25,6 +26,20 @@ class SignUp extends React.Component {
                 confirmPassword: "",
                 
             })
+            return;
+        }
+        try{
+            const user = await auth.createUserWithEmailAndPassword(email,password);
+            await createUserProfileDocument(user, {displayName});
+            this.setState({
+                email: '',
+                password: '',
+                displayName: '',
+                confirmPassword: "",
+            })
+
+        } catch(err) {
+            console.log(err)
         }
     }
 
