@@ -1,0 +1,4 @@
+ const CART_ACTION_TYPE = {
+	TOGGLE_CART_HIDDEN :  "TOGGLE_CART_HIDDEN"
+}
+export default  CART_ACTION_TYPE;

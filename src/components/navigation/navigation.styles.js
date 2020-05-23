@@ -62,6 +62,7 @@ export const NavStyle = styled(Link)`
     text-decoration: none;
     display: inline-block;
     padding: 1rem 5rem;
+    cursor: pointer;
     text-shadow: 0 1rem 2.5rem rgba(0,0,0,0.2);
     background-color: #FEE140;
     background-image: linear-gradient(90deg, #FEE140 0%, #FA709A 100%);
