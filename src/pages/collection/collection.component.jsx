@@ -2,6 +2,9 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import CollectionDetail from '../collection-detail/collection-detail.component';
 import CollectionOverView from '../../components/collection-overview/collection-overview.component';
+
+
+
 class  CollectionPage extends React.Component {
 	componentDidMount() {
 		document.body.style.backgroundImage = "none";
@@ -12,15 +15,18 @@ class  CollectionPage extends React.Component {
 	render() {
 		const {match} = this.props;
 		return (
-			<Switch>
-				<Route  exact 
-						path = {match.url} 
-						component = {CollectionOverView}
-				/>
-				<Route exact 
-					   path = {match.url + "/collectionItem"} 
-					   component ={CollectionDetail}/>
-		</Switch>
+			<div>
+				<Switch>
+					<Route  exact 
+							path = {`${match.url}`} 
+							component = {CollectionOverView}
+					/>	
+					<Route exact 
+						   path = {`${match.url}/:id`} 
+						   component ={CollectionDetail}
+					/>
+				</Switch>
+			</div>
 		);
 	}
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import {NavigationContainer ,
         NavStyle,
         NavigationContainerList} from './navigation.styles';
+import CartDropDown from '../cart-dropdown/cart-dropdown.component';
 import { ReactComponent as IconCheckOut} from '../../asset/svg/009-tray.svg';
 
 const Navigation = () => {
@@ -24,6 +25,7 @@ const Navigation = () => {
                         <IconCheckOut as="svg" />  
                     </NavStyle>
                 </li>
+                <CartDropDown/>
             </NavigationContainerList>
         </NavigationContainer>
     )

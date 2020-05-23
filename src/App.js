@@ -17,7 +17,7 @@ class App extends React.Component {
   componentDidMount() {
     auth.onAuthStateChanged(user => {
       this.setState({currentUser: user});
-      console.log(user)
+      
     })
   }
   componentWillUnmount() {
@@ -31,7 +31,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path = "/" component = {HomePage}/>
             <Route exact path = "/login" component = {SignInAndSignUp} />
-            <Route exact path = "/collection" component = {CollectionPage}/>  
+            <Route  path = "/collection" component = {CollectionPage}/>  
           </Switch>
       </div>
     )

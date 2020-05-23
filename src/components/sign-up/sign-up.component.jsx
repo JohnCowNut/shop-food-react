@@ -7,7 +7,7 @@ class SignUp extends React.Component {
         super(props);
         
         this.state = {
-            name : "",
+            email : "",
             displayName : "",
             password : "",
             confirmPassword : ""
@@ -15,9 +15,16 @@ class SignUp extends React.Component {
     }
     
     handleSubmit = e => {
-        const {name , displayName , password , confirmPassword} = this.state;
+        const {email , displayName , password , confirmPassword} = this.state;
         if( password !== confirmPassword) {
-            console.log("plese try again")
+            alert("Password don't match");
+            this.setState({
+                email: '',
+                password: '',
+                displayName: '',
+                confirmPassword: "",
+                
+            })
         }
     }
 

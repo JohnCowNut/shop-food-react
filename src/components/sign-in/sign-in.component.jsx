@@ -1,7 +1,8 @@
 import React from 'react';
 import FormInput from '../form-input/form-input.component';
 import ButtonLink from '../custom-link/custom-link.component';
-import {signInWithGoogle} from '../../firebase/firebase.utilis';
+import {signInWithGoogle , auth} from '../../firebase/firebase.utilis';
+
 class SignIn extends React.Component {
     constructor(props) {
         super(props);
@@ -10,10 +11,18 @@ class SignIn extends React.Component {
             email: ""
         }
     }
-    handleSubmit = e => {
+    handleSubmit = async e => {
         e.preventDefault();
+
         const {password , email }  = this.state;
-        console.log(password , email)
+        try{
+            await auth.signInWithEmailAndPassword(email , password);
+            this.setState({email: "", password: ""})
+        } catch(err) {
+            console.log(err)
+        }
+        
+
     }
     handleChange = (e) => {
        
@@ -28,9 +37,8 @@ class SignIn extends React.Component {
                 <h2 className=" mb-md">Do You Have Account ?</h2>
                 <form  onSubmit={this.handleSubmit} >
                     <FormInput 
-                        className ="d-left__input" 
-                        placeholder="Your Email:" 
-                        name ="name"
+                        placeholder="Your Email: " 
+                        name ="email"
                         type="email" 
                         value = {email}
                         handleChange = {this.handleChange}

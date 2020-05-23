@@ -6,9 +6,61 @@ const getButton = (props) => {
     if(props.sign) {
         return CustomSignInSignUp;
     }
+    if(props.addItem) {
+        return  CustomAddItemStyle;
+    }
+    if(props.checkout) {
+        return CustomCheckOutStyle;
+    }
     return (props.started ? CustomLinkStarted : CustomLinkMored )
 }
 
+const CustomCheckOutStyle = css`
+        margin-top: auto;
+        padding: 1.5rem 0;
+        font-size: 1.6rem;
+        font-weight: 900;
+        background-color: darkorange;
+        border: none;
+        color: white;
+        font-family: inherit;
+        
+        transition: all 0.2s ease-in-out;
+        &:focus{
+            outline-color: #ccc;
+        }
+        &:hover{
+            color: #7d7d7d;
+            cursor: pointer;
+            background-color: #FEE140;
+            box-shadow: none;
+            background-image: linear-gradient(90deg, #FEE140 0%, #FA709A 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.3rem;
+        }
+
+`
+const CustomAddItemStyle = css`
+    &,&:link,&:active {
+        text-decoration: none;
+        padding: 1rem 3.5rem;
+        color:white;
+        border: none;
+        cursor: pointer;
+        background-color: #8BC6EC;
+        background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+        border-radius: 2.5rem;
+        font-size: 1.6rem;
+        transition: all 0.2s ease;
+    }
+    &:hover{
+        box-shadow: 0 1rem 2.5rem rgba(0,0,0,0.3);
+        transform: translateY(-3px);
+    }
+
+`
 const CustomLinkMored = css`
     font-size: 2rem;
     font-weight: 600;
