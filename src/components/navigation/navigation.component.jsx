@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import {NavigationContainer ,
         NavStyle,
         NavigationContainerList} from './navigation.styles';
@@ -37,4 +38,8 @@ const Navigation = ({currentUser}) => {
         </NavigationContainer>
     )
 }
-export default Navigation;
+
+const mapStateToProps = ({user : {currentUser}}) => ({
+    currentUser,
+})
+export default connect(mapStateToProps)(Navigation);
