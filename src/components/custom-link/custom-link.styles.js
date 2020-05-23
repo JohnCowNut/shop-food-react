@@ -19,6 +19,10 @@ const CustomLinkMored = css`
     &:link,&:active,&:focus{
         color: currentColor;
     }
+    &:hover{
+        text-shadow: 0 1rem 4rem rgba(0,0,0,0.5);
+        box-shadow: none;
+    }
 `
 
 const CustomLinkStarted = css`

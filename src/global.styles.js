@@ -105,5 +105,12 @@ body {
 .mb-lg {margin-bottom: 8rem !important;}
 .text-center {text-align: center;}
 
-
+.hot{
+    width: 4.5rem;
+    height: 4.5rem;
+	position: absolute;
+	z-index: 2;
+	top: -5.4%;
+	right: 0;
+}
 `
