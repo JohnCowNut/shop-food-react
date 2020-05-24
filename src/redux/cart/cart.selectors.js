@@ -15,3 +15,7 @@ export const selectCartFoodCount = createSelector(
 	[selectCartFood],
 	cartFood => cartFood.reduce((prev,next) => (prev += next.quantity),0)
 )
+export const selectToTalFood = createSelector(
+	[selectCartFood],
+	cartFood => cartFood.reduce((prev,next) => (prev += next.quantity * next.price),0)
+	)

@@ -1,6 +1,5 @@
 export const addFoodToCart = (foodState, foodNext) => {
-	console.log(foodNext)
-	const exitsFood = foodState.find( el => el.id === foodNext.id);
+	const exitsFood = foodState.find( food => food.id === foodNext.id);
 	if(exitsFood) {
 		return foodState.map ( food => 
 			food.id === foodNext.id 
@@ -8,4 +7,14 @@ export const addFoodToCart = (foodState, foodNext) => {
 			: food
 	)}
 	return [...foodState,{...foodNext,quantity : 1}]
+}
+
+export const decreaseFoodCart = (foodState , foodNext) => {
+	const exitsFood = foodState.find(food =>  food.id === foodNext.id);
+	if(exitsFood.quantity === 1) {
+		return foodState.filter(food => food.id !== foodNext.id);
+	}
+
+	return foodState.map(food => food.id === foodNext.id ?
+		 ({...food,quantity: food.quantity -1}) : food)
 }

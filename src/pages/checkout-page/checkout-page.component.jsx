@@ -4,7 +4,7 @@ import {CheckOutPageContainer,
 		TotalContainer,
 		} from './checkout-page.styles';
 import { connect } from 'react-redux';
-import {selectCartFood} from '../../redux/cart/cart.selectors';
+import {selectCartFood, selectToTalFood} from '../../redux/cart/cart.selectors';
 import CheckOutItem from '../../components/checkout-item/checkout-item.component';
 class CheckoutPage extends React.Component {
 	componentDidMount() {
@@ -14,7 +14,7 @@ class CheckoutPage extends React.Component {
 		document.body.style.backgroundImage = "url('https://i.postimg.cc/9QqtCCFp/brooke-lark-08b-OYn-H-r-E-unsplash-1.jpg')"
 	}
 	render() {
-		const {cartFood} = this.props;
+		const {cartFood,totalMoney} = this.props;
 
 		return (
 			<CheckOutPageContainer >
@@ -42,16 +42,18 @@ class CheckoutPage extends React.Component {
 	        		}
 	        	
 	        	<TotalContainer >
-            		<span>TOTAL: 0$</span>
+            		<span>TOTAL: {totalMoney}$</span>
         		</TotalContainer>
 	        </CheckOutPageContainer>
 
 		);
 	}
 }
+
  
 const mapStateToProps = state => ({
-	cartFood : selectCartFood(state)
+	cartFood : selectCartFood(state),
+	totalMoney : selectToTalFood(state)
 })
 
 export default connect(mapStateToProps)(CheckoutPage);

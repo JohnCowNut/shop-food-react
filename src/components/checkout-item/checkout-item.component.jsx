@@ -1,10 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import {CheckOutItemContainer,
 		CheckOutImageContainer,
 		CheckOutOptionContainer,
 		CheckoutQuantityContainer,
 		CheckoutRemoveContainer} from './checkout-item.style';
-const CheckOutItem = ({food}) => {
+import {descreaseFoodCart, addFoodToCart ,removeFoodToCart} from '../../redux/cart/cart.action';
+const CheckOutItem = ({food,descreaseFoodCart,addFoodToCart,removeFoodToCart}) => {
 	const {photoUrl,quantity, price,title} = food;
 	return (
 			<CheckOutItemContainer>
@@ -14,14 +16,20 @@ const CheckOutItem = ({food}) => {
 
 				<CheckOutOptionContainer>{title}</CheckOutOptionContainer>
 				<CheckoutQuantityContainer>
-					<div className= "arrow">&#10094;</div>
+					<div className= "arrow" onClick ={() => descreaseFoodCart(food)}>&#10094;</div>
 					{quantity}
-					<div className="arrow">&#10095;</div>
+					<div className="arrow" onClick={ () => addFoodToCart(food)}>&#10095;</div>
 				</CheckoutQuantityContainer>
 				<CheckOutOptionContainer >{price}</CheckOutOptionContainer>
-				<CheckoutRemoveContainer>&#10005;</CheckoutRemoveContainer>
+				<CheckoutRemoveContainer onClick={() => removeFoodToCart(food)}>&#10005;</CheckoutRemoveContainer>
 			</CheckOutItemContainer>
 		
 	)
 }
-export default CheckOutItem;
+
+const mapDispatchToProps = dispatch => ({
+	descreaseFoodCart : food => dispatch(descreaseFoodCart(food)),
+	addFoodToCart : food => dispatch(addFoodToCart(food)),
+	removeFoodToCart: food => dispatch(removeFoodToCart(food))
+})
+export default connect(null,mapDispatchToProps)(CheckOutItem);
