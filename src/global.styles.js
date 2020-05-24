@@ -113,4 +113,7 @@ body {
 	top: -5.4%;
 	right: 0;
 }
+.over-scroll{
+   overflow-y: scroll;
+}
 `

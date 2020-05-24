@@ -7,9 +7,10 @@ import {toggleCartHidden} from "../../redux/cart/cart.action";
 import CartDropDown from '../cart-dropdown/cart-dropdown.component';
 import { ReactComponent as IconCheckOut} from '../../asset/svg/009-tray.svg';
 import { auth } from '../../firebase/firebase.utilis';
+import {selectCartFoodCount,selectCartHidden} from '../../redux/cart/cart.selectors';
 
 
-const Navigation = ({currentUser,toggleCartHidden ,hidden}) => {
+const Navigation = ({currentUser,toggleCartHidden ,hidden,totalItem}) => {
     return (
         <NavigationContainer className=" mb-lg">
             <NavStyle to="/" >COWNUT</NavStyle>
@@ -28,15 +29,11 @@ const Navigation = ({currentUser,toggleCartHidden ,hidden}) => {
                     }
                     
                 </li>
-                <li>
-                    {
-                        currentUser ? 
-                        <NavStyle as="div" icon="true" onClick={() => toggleCartHidden()} >
-                            <span>0</span>
-                            <IconCheckOut as="svg" />  
-                        </NavStyle>
-                        : null
-                    }
+                <li>  
+                    <NavStyle as="div" icon="true" onClick={() => toggleCartHidden()} >
+                        <span>{totalItem}</span>
+                        <IconCheckOut as="svg" />  
+                    </NavStyle>    
                 </li>
                 {
                     hidden ? <CartDropDown/>  : null
@@ -49,7 +46,8 @@ const Navigation = ({currentUser,toggleCartHidden ,hidden}) => {
 
 const mapStateToProps = state => ({
     currentUser: state.user.currentUser,
-    hidden: state.cart.hidden
+    hidden: selectCartHidden(state),
+    totalItem : selectCartFoodCount(state)
 })
 const mapDispatchToProps = dispatch => ({
     toggleCartHidden : () => dispatch(toggleCartHidden())
