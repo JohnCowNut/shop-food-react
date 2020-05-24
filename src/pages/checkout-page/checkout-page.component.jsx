@@ -4,6 +4,7 @@ import {CheckOutPageContainer,
 		TotalContainer,
 		} from './checkout-page.styles';
 import { connect } from 'react-redux';
+import StripeButton from '../../components/stripe-button/stripe-button.component'
 import {selectCartFood, selectToTalFood} from '../../redux/cart/cart.selectors';
 import CheckOutItem from '../../components/checkout-item/checkout-item.component';
 class CheckoutPage extends React.Component {
@@ -44,6 +45,7 @@ class CheckoutPage extends React.Component {
 	        	<TotalContainer >
             		<span>TOTAL: {totalMoney}$</span>
         		</TotalContainer>
+        		<StripeButton price ={totalMoney} />
 	        </CheckOutPageContainer>
 
 		);

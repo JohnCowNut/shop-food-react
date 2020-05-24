@@ -4,8 +4,8 @@ import ButtonLink from '../custom-link/custom-link.component';
 import { withRouter } from "react-router-dom";
 import {MenuItemContainer , ImageContainer , ContainerMenuBody} from './menu-item.styles';
 const MenuItem = ({imageUrl,title,routeName,price,more,reviews,match,history}) => {
-	
 	return (
+
 		<MenuItemContainer style = {{backgroundColor : "beige"}}>
 			<ImageContainer alt="#" 
 				src= {imageUrl}
@@ -16,11 +16,13 @@ const MenuItem = ({imageUrl,title,routeName,price,more,reviews,match,history}) =
 			 		<h5 >{title}</h5>
 			 	</div>
 			 	<ul>
-			 		<li>Price: {price} 💲</li>	
+			 		<li>From: {price} 💲</li>	
 			 		<li>More: {more}</li>
 			 		<li>Reviews: {reviews}</li>
 			 		<li>
-			 			<ButtonLink as ="div" onClick = {() => history.push(`${match.url}/${routeName.toLowerCase()}`)}>More Details</ButtonLink>
+			 			<ButtonLink as ="div" 
+			 			onClick = {() => history.push(`${match.url}/${routeName.toLowerCase()}`)}>
+			 			More Details</ButtonLink>
 			 		</li>
 			 	</ul>
 			 </ContainerMenuBody>
