@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {Switch , Route , Redirect} from 'react-router-dom';
 import {GlobalStyle} from './global.styles';
 import {setCurrentUser} from './redux/user/user.action';
-
+import CheckoutPage from './pages/checkout-page/checkout-page.component'
 import Navigation from './components/navigation/navigation.component';
 import HomePage from './pages/homepage/homepage.component';
 import SignInAndSignUp from './pages/sign-in-sign-up/sign-in-sign-up.component';
@@ -38,6 +38,10 @@ class App extends React.Component {
           <Navigation  />
           <Switch>
             <Route exact path = "/" component = {HomePage}/>
+
+            <Route exact path = "/checkout"
+              render = { () =>  this.props.currentUser ? (<CheckoutPage/>) : (<Redirect to="/collection" />)}
+             />
             <Route exact path = "/login" render={() =>
              this.props.currentUser ? (
                 <Redirect to ="/collection"/>

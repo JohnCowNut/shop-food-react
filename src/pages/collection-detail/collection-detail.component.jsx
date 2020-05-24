@@ -19,8 +19,8 @@ class CollectionDetail extends React.Component {
 				<h2 className ="heading__primary mb-lg text-center">My Collection {food} </h2>
 				<CollectionItemContainer>
 					{
-						foodDisplay.map(({id, ...othersProps}) => 
-							<CollectionItem key = {id}  {...othersProps}/>)
+						foodDisplay.map((food) => 
+							<CollectionItem key = {food.id}  food = {food}/>)
 					}
 				</CollectionItemContainer>
 			</div>
