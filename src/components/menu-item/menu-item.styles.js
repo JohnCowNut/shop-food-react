@@ -27,7 +27,7 @@ export const ImageContainer = styled.img`
 export const ContainerMenuBody = styled.div`
     h5 {
         display: inline;
-        font-size: 3rem;
+        font-size: 2.5rem;
         background-color: #FF9A8B;
         background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
 
@@ -38,13 +38,13 @@ export const ContainerMenuBody = styled.div`
     ul {
         display: flex;
         flex-wrap: wrap;
-        padding: 5rem;
+        padding: 4rem 2.5rem;
             li{ 
                 flex:0 0 50%;
                 list-style: none;
                 margin-bottom: 2.5rem;
                 color: darkorange;
-                font-size: 1.8rem;
+                font-size: 1.6rem;
                 transition: all 0.2s ease-in-out;
                 &:hover{
                     cursor: pointer;

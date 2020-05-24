@@ -1,6 +1,15 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 
+export const CheckOutItemContainer = styled.div`
+  width: 100%;
+  display: flex;
+  min-height: 100px;
+  border-bottom: 1px solid #ccc;
+  padding: 1.5rem 0;
+  font-size: 20px;
+  align-items: center;
+`
 
 export const CheckOutPageContainer = styled.section`
 	width: 55%;

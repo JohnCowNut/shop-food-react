@@ -1,8 +1,11 @@
 import React from 'react';
 import {CheckOutPageContainer,
 		CheckOutPageHeader,
-		TotalContainer} from './checkout-page.styles';
-
+		TotalContainer,
+		} from './checkout-page.styles';
+import { connect } from 'react-redux';
+import {selectCartFood} from '../../redux/cart/cart.selectors';
+import CheckOutItem from '../../components/checkout-item/checkout-item.component';
 class CheckoutPage extends React.Component {
 	componentDidMount() {
 		document.body.style.backgroundImage = "none";
@@ -11,6 +14,8 @@ class CheckoutPage extends React.Component {
 		document.body.style.backgroundImage = "url('https://i.postimg.cc/9QqtCCFp/brooke-lark-08b-OYn-H-r-E-unsplash-1.jpg')"
 	}
 	render() {
+		const {cartFood} = this.props;
+
 		return (
 			<CheckOutPageContainer >
 	            <CheckOutPageHeader  >
@@ -29,13 +34,24 @@ class CheckoutPage extends React.Component {
 		            <div className="header-block">
 		                <span>Remove</span>
 		            </div>
-	        	</CheckOutPageHeader>	
+	        	</CheckOutPageHeader>
+	        
+	        		{
+	        			cartFood.map( food => 
+	        			(<CheckOutItem key={food.id} food={food} />))
+	        		}
+	        	
 	        	<TotalContainer >
             		<span>TOTAL: 0$</span>
         		</TotalContainer>
 	        </CheckOutPageContainer>
+
 		);
 	}
 }
+ 
+const mapStateToProps = state => ({
+	cartFood : selectCartFood(state)
+})
 
-export default CheckoutPage;
+export default connect(mapStateToProps)(CheckoutPage);

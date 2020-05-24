@@ -8,7 +8,7 @@ import CartDropDown from '../cart-dropdown/cart-dropdown.component';
 import { ReactComponent as IconCheckOut} from '../../asset/svg/009-tray.svg';
 import { auth } from '../../firebase/firebase.utilis';
 import {selectCartFoodCount,selectCartHidden} from '../../redux/cart/cart.selectors';
-
+import {selectCurrentUser} from "../../redux/user/user.selectors";
 
 const Navigation = ({currentUser,toggleCartHidden ,hidden,totalItem}) => {
     return (
@@ -45,7 +45,7 @@ const Navigation = ({currentUser,toggleCartHidden ,hidden,totalItem}) => {
 }
 
 const mapStateToProps = state => ({
-    currentUser: state.user.currentUser,
+    currentUser: selectCurrentUser(state),
     hidden: selectCartHidden(state),
     totalItem : selectCartFoodCount(state)
 })

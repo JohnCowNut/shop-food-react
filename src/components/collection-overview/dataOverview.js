@@ -5,7 +5,7 @@ const shopData_OVERVIEW  =  [
       routeName : 'Tacos',
       imageUrl : 'https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       price : 12.25,
-      reviews :"⭐⭐⭐⭐⭐",
+      reviews :"⭐⭐⭐⭐",
       more: "2 package 🎁🎁"
     },
     {
@@ -14,7 +14,7 @@ const shopData_OVERVIEW  =  [
       routeName : 'Pancake',
       imageUrl : 'https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
       price : 25,
-      reviews : "⭐⭐⭐⭐⭐",
+      reviews : "⭐⭐⭐⭐",
       more: "2 package 🎁🎁"
     },
     {
@@ -23,7 +23,7 @@ const shopData_OVERVIEW  =  [
       routeName : 'Rice',
       imageUrl : 'https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
       price : 30, 
-      reviews : "⭐⭐⭐⭐⭐",
+      reviews : "⭐⭐⭐⭐",
       more: "2 package 🎁🎁"
       
     },
@@ -33,7 +33,7 @@ const shopData_OVERVIEW  =  [
       routeName : 'Beef',
       imageUrl : 'https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
       price : 25,
-      reviews : "⭐⭐⭐⭐⭐",
+      reviews : "⭐⭐⭐⭐",
       more: "2 package 🎁🎁"
     },
     {
@@ -42,7 +42,7 @@ const shopData_OVERVIEW  =  [
       routeName : 'Pasta',
       imageUrl : 'https://images.pexels.com/photos/803963/pexels-photo-803963.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
       price : 25,
-      reviews : "⭐⭐⭐⭐⭐",
+      reviews : "⭐⭐⭐⭐",
       more: "2 package 🎁🎁"
     },
     {
@@ -51,7 +51,7 @@ const shopData_OVERVIEW  =  [
       routeName : 'Plate',
       imageUrl : 'https://images.pexels.com/photos/1860204/pexels-photo-1860204.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
       price : 25,
-      reviews : "⭐⭐⭐⭐⭐",
+      reviews : "⭐⭐⭐⭐",
       more: "2 package 🎁🎁"
     },
     {
@@ -60,7 +60,7 @@ const shopData_OVERVIEW  =  [
       routeName : 'Pizza',
       imageUrl : 'https://images.pexels.com/photos/1653877/pexels-photo-1653877.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       price : 25,
-      reviews : "⭐⭐⭐⭐⭐",
+      reviews : "⭐⭐⭐⭐",
       more: "2 package 🎁🎁"
     },
     {
@@ -69,7 +69,7 @@ const shopData_OVERVIEW  =  [
       routeName : 'WhiteandBrownCooked',
       imageUrl : 'https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       price : 25,
-      reviews : "⭐⭐⭐⭐⭐",
+      reviews : "⭐⭐⭐⭐",
       more: "2 package 🎁🎁"
     },
     {
@@ -78,7 +78,7 @@ const shopData_OVERVIEW  =  [
       routeName : 'Fries',
       imageUrl : 'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
       price : 25.99,
-      reviews : "⭐⭐⭐⭐⭐",
+      reviews : "⭐⭐⭐⭐",
       more: "2 package 🎁🎁"
     }
   ]

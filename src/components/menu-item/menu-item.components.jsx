@@ -7,7 +7,7 @@ const MenuItem = ({imageUrl,title,routeName,price,more,reviews,match,history}) =
 	
 	return (
 		<MenuItemContainer style = {{backgroundColor : "beige"}}>
-			<ImageContainer className = " mb-sm" alt="#" 
+			<ImageContainer alt="#" 
 				src= {imageUrl}
 			 />
 			 <HotIcon as="svg" className= "hot"/>
