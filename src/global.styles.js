@@ -67,7 +67,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 .heading__primary { 
-    font-size: 4.5rem;
+    font-size: 3.9rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1.5rem;
@@ -78,13 +78,13 @@ body {
     cursor: pointer;
     transition: all 0.2s ease;
     &:hover{
-        transform: scale(1.2);
+        transform: scale(1.05);
         text-shadow: .5rem 1rem 2rem rgba(0,0,0,0.2);
     }
 
 }
 .heading__secondary{
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1rem;
