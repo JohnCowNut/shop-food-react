@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { removeFoodToCart } from '../../redux/cart/cart.action';
 import {FoodItemsContainer , FoodPhotoContainer } from './food-item.style';
-const FoodItem = ({food}) => {
+const FoodItem = ({food,removeFoodToCart}) => {
 	const {title,price,quantity,photoUrl} = food;
 	return (
 		<FoodItemsContainer >
@@ -12,7 +14,12 @@ const FoodItem = ({food}) => {
         			<li>{quantity} x {`${price} $`}</li>
         		</ul>
         	</div>
+			<div onClick = {() => removeFoodToCart(food)} >&#10005;</div>
         </FoodItemsContainer>
 	)
 }
-export default FoodItem;
+const mapDispatchToProps = dispatch => ({
+	removeFoodToCart  : food => dispatch(removeFoodToCart(food))
+})
+
+export default connect(null,mapDispatchToProps)(FoodItem) ;
