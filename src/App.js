@@ -8,11 +8,13 @@ import Navigation from './components/navigation/navigation.component';
 import HomePage from './pages/homepage/homepage.component';
 import SignInAndSignUp from './pages/sign-in-sign-up/sign-in-sign-up.component';
 import CollectionPage from './pages/collection/collection.component';
-import {auth, createUserProfileDocument} from './firebase/firebase.utilis';
+import {auth, createUserProfileDocument } from './firebase/firebase.utilis';
+import {selectCurrentUser} from "./redux/user/user.selectors";
 class App extends React.Component {
   unsubscribeFromAuth = null;
   componentDidMount() {
    const {setCurrentUser}  = this.props;
+  
    this.unsubscribeFromAuth = auth.onAuthStateChanged( async userAuth => {
       if(userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
@@ -57,7 +59,7 @@ class App extends React.Component {
   }
 }
 const mapStateToProps = state => ({
-  currentUser : state.user.currentUser
+  currentUser : selectCurrentUser(state),
 })
 const mapDispatchToProps = dispatch => ({
   setCurrentUser : user => dispatch(setCurrentUser(user))

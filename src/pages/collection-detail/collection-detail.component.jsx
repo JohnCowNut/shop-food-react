@@ -1,19 +1,26 @@
 import React from 'react';
-import FOOD_DATA from './collection-detail.data';
+import { connect } from 'react-redux'
 import CollectionItemContainer from './collection-detail.style';
 import CollectionItem from "../../components/collection-item/collection-item.component";
-class CollectionDetail extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			foods : FOOD_DATA
-		}
+import {selectoFoods} from '../../redux/shop_detail/shop_detail.selectors';
+
+import { firestore } from "../../firebase/firebase.utilis";
+
+
+class CollectionDetail extends React.Component { 
+	componentDidMount() {
+			const collectionRef = firestore.collection("foods");
+			collectionRef.onSnapshot( async ( snapShot) => {
+				console.log(snapShot.docs[0].data())
+			})
 	}
-	render() {
+    
+	render(){
 		const food = this.props.match.params.id;
-		const {foods} = this.state;
+		const {foods} = this.props;
 		
 		let foodDisplay = Object.keys(foods).reduce((prev,next) => (prev = foods[food]),[])
+		console.log(foodDisplay)
 		return (
 			<div>
 				<h2 className ="heading__primary mb-lg text-center">My Collection {food} </h2>
@@ -24,8 +31,14 @@ class CollectionDetail extends React.Component {
 					}
 				</CollectionItemContainer>
 			</div>
+			
 		)
 	}
 }
 
-export default CollectionDetail;
+
+const mapStateToProps = state => ({
+	foods : selectoFoods(state)
+})
+
+export default connect(mapStateToProps)(CollectionDetail);
