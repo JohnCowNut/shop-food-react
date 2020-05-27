@@ -1,18 +1,11 @@
 import React from 'react';
 import MenuItem from '../menu-item/menu-item.components';
-import shopData_OVERVIEW from './dataOverview';
 import {MenuItemContainer} from './collection-overview.styles';
+import { connect } from 'react-redux';
+import { selectorFoods } from '../../redux/shop_detail/shop_detail.selectors';
 class  CollectionOverView  extends React.Component  {
-	constructor(props) {
-		super(props);
-		
-		this.state = {
-			menu : shopData_OVERVIEW
-		}
-	}
-
 	render() {
-		 const { menu } = this.state;
+		const { menu } = this.props;
  		return (
 			 <div>
 				<h1 className="heading__primary mb-lg text-center"> Overview My Restaurant</h1>
@@ -25,8 +18,10 @@ class  CollectionOverView  extends React.Component  {
 			</div>
 		)
 	}
-
 }
 
+const mapStateToProps = state => ({
+	menu : selectorFoods(state)
+})
 
-export default CollectionOverView;
+export default connect(mapStateToProps)(CollectionOverView) ;

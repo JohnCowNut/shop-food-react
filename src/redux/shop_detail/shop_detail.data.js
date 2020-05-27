@@ -1,6 +1,15 @@
 const FOOD_DATA = {
-    tacos : [
-          {
+    tacos : {
+      id : 1 ,
+      title : "tacos",
+      subTitle : 'Tacos With Lime',
+      routeName : 'Tacos',
+      imageUrl : 'https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      price : 12.25,
+      reviews :"⭐⭐⭐⭐",
+      more: "2 package 🎁🎁",
+      extend : [
+        {
               id : 1,
               photoUrl : 'https://i.postimg.cc/fyfY0fYG/tacos-1.jpg',
               descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
@@ -54,11 +63,21 @@ const FOOD_DATA = {
               type:"freeship",
               time: 25
           }
-        ],
-      pancake: [
+      ]    
+    },
+    pancake: {
+      id : 2 ,
+      subTitle : 'Pancake with Sliced Strawberry',
+      title: "pancake",
+      routeName : 'Pancake',
+      imageUrl : 'https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      price : 25,
+      reviews : "⭐⭐⭐⭐",
+      more: "2 package 🎁🎁",
+      extend : [
         {
               id : 1,
-              photoUrl : 'https://i.postimg.cc/8kffBPSJ/pancake-1.jpg',
+              photoUrl : 'https://i.postimg.cc/fyfY0fYG/tacos-1.jpg',
               descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
               title:"Al pastor",
               price: 25,
@@ -67,7 +86,7 @@ const FOOD_DATA = {
           },
           {
               id : 2,
-              photoUrl : 'https://i.postimg.cc/L6dYyK9y/pancake-2.jpg',
+              photoUrl : 'https://i.postimg.cc/X7nf6tb4/tacos-2.jpg',
               descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
               title:"Tacos árabes",
               price: 19,
@@ -76,7 +95,7 @@ const FOOD_DATA = {
           },
           {
               id : 3,
-              photoUrl : 'https://i.postimg.cc/L8DJ6Jz7/pancake-3.jpg',
+              photoUrl : 'https://i.postimg.cc/dV1GLd3f/tacos-3.jpg',
               descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
               title : "Barbacoa",
               price: 20,
@@ -85,7 +104,7 @@ const FOOD_DATA = {
           },
           {
               id : 4,
-              photoUrl : 'https://i.postimg.cc/FHNf4yJ3/pancake-4.jpg',
+              photoUrl : 'https://i.postimg.cc/wTFhqFqJ/taocos-4.jpg',
               descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
               title: "Birria",
               price: 12,
@@ -94,7 +113,7 @@ const FOOD_DATA = {
           },
           {
               id : 5,
-              photoUrl : 'https://i.postimg.cc/bNQGWCdq/pancake-5.jpg',
+              photoUrl : 'https://i.postimg.cc/RC77842g/tacos-5.jpg',
               descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
               title: "Buche",
               price: 12.3,
@@ -103,71 +122,25 @@ const FOOD_DATA = {
           },
           {
               id : 6,
-              photoUrl : 'https://i.postimg.cc/N005yQD0/pancake-6.jpg',
+              photoUrl : 'https://i.postimg.cc/8cZjSKRz/tacos-6.jpg',
               descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
               title: "Cabeza",
               price: 10,
               type:"freeship",
               time: 20
           }
-      ],
-      rice:[
-        {
-              id : 1,
-              photoUrl : 'https://i.postimg.cc/FFw9dYB9/rice-1.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title:"Al pastor",
-              price: 25,
-              type: "freeship",
-              time: 20
-          },
-          {
-              id : 2,
-              photoUrl : 'https://i.postimg.cc/zfD5ZKVk/rice-2.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title:"Tacos árabes",
-              price: 19,
-              type: "freeship",
-              time: 20
-          },
-          {
-              id : 3,
-              photoUrl : 'https://i.postimg.cc/RFyzHYGP/rice-3.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title : "Barbacoa",
-              price: 20,
-              type:"freeship",
-              time: 20
-          },
-          {
-              id : 4,
-              photoUrl : 'https://i.postimg.cc/NfhcGWKF/rice-4.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title: "Birria",
-              price: 12,
-              type: "freeship",
-              time: 20
-          },
-          {
-              id : 5,
-              photoUrl : 'https://i.postimg.cc/L6zMJNPT/rice-5.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title: "Buche",
-              price: 12.3,
-              type: "freeship",
-              time: 20
-          },
-          {
-              id : 6,
-              photoUrl : 'https://i.postimg.cc/Hkd1XX4C/rice-6.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title: "Cabeza",
-              price: 10,
-              type:"freeship",
-              time: 20
-          }
-      ],
-      beef: [
+      ]
+    },
+    rice : {
+      id : 3 ,
+      title :"rice",
+      subTitle : 'Plate of Rice and Cooked Meet',
+      routeName : 'Rice',
+      imageUrl : 'https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      price : 30, 
+      reviews : "⭐⭐⭐⭐",
+      more: "2 package 🎁🎁",
+      extend : [
         {
               id : 1,
               photoUrl : 'https://i.postimg.cc/fyfY0fYG/tacos-1.jpg',
@@ -184,7 +157,7 @@ const FOOD_DATA = {
               title:"Tacos árabes",
               price: 19,
               type: "freeship",
-              time: 20
+              time: 5
           },
           {
               id : 3,
@@ -193,7 +166,7 @@ const FOOD_DATA = {
               title : "Barbacoa",
               price: 20,
               type:"freeship",
-              time: 20
+              time: 10
           },
           {
               id : 4,
@@ -202,7 +175,7 @@ const FOOD_DATA = {
               title: "Birria",
               price: 12,
               type: "freeship",
-              time: 20
+              time: 15
           },
           {
               id : 5,
@@ -222,232 +195,18 @@ const FOOD_DATA = {
               type:"freeship",
               time: 20
           }
-      ],
-      pasta: [
-        {
-              id : 1,
-              photoUrl : 'https://i.postimg.cc/fyfY0fYG/tacos-1.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title:"Al pastor",
-              price: 25,
-              type: "freeship",
-              time: 20
-          },
-          {
-              id : 2,
-              photoUrl : 'https://i.postimg.cc/X7nf6tb4/tacos-2.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title:"Tacos árabes",
-              price: 19,
-              type: "freeship",
-              time: 20
-          },
-          {
-              id : 3,
-              photoUrl : 'https://i.postimg.cc/dV1GLd3f/tacos-3.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title : "Barbacoa",
-              price: 20,
-              type:"freeship",
-              time: 20
-          },
-          {
-              id : 4,
-              photoUrl : 'https://i.postimg.cc/wTFhqFqJ/taocos-4.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title: "Birria",
-              price: 12,
-              type: "freeship",
-              time: 20
-          },
-          {
-              id : 5,
-              photoUrl : 'https://i.postimg.cc/RC77842g/tacos-5.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title: "Buche",
-              price: 12.3,
-              type: "freeship",
-              time: 20
-          },
-          {
-              id : 6,
-              photoUrl : 'https://i.postimg.cc/8cZjSKRz/tacos-6.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title: "Cabeza",
-              price: 10,
-              type:"freeship",
-              time: 20
-          }
-      ],
-      plate: [
-        {
-              id : 1,
-              photoUrl : 'https://i.postimg.cc/fyfY0fYG/tacos-1.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title:"Al pastor",
-              price: 25,
-              type: "freeship",
-              time: 20
-          },
-          {
-              id : 2,
-              photoUrl : 'https://i.postimg.cc/X7nf6tb4/tacos-2.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title:"Tacos árabes",
-              price: 19,
-              type: "freeship",
-              time: 20
-          },
-          {
-              id : 3,
-              photoUrl : 'https://i.postimg.cc/dV1GLd3f/tacos-3.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title : "Barbacoa",
-              price: 20,
-              type:"freeship",
-              time: 20
-          },
-          {
-              id : 4,
-              photoUrl : 'https://i.postimg.cc/wTFhqFqJ/taocos-4.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title: "Birria",
-              price: 12,
-              type: "freeship",
-              time: 20
-          },
-          {
-              id : 5,
-              photoUrl : 'https://i.postimg.cc/RC77842g/tacos-5.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title: "Buche",
-              price: 12.3,
-              type: "freeship",
-              time: 20
-          },
-          {
-              id : 6,
-              photoUrl : 'https://i.postimg.cc/8cZjSKRz/tacos-6.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title: "Cabeza",
-              price: 10,
-              type:"freeship",
-              time: 20
-          }
-      ],
-      pizza: [
-        {
-              id : 1,
-              photoUrl : 'https://i.postimg.cc/fyfY0fYG/tacos-1.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title:"Al pastor",
-              price: 25,
-              type: "freeship",
-              time: 20
-          },
-          {
-              id : 2,
-              photoUrl : 'https://i.postimg.cc/X7nf6tb4/tacos-2.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title:"Tacos árabes",
-              price: 19,
-              type: "freeship",
-              time: 20
-          },
-          {
-              id : 3,
-              photoUrl : 'https://i.postimg.cc/dV1GLd3f/tacos-3.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title : "Barbacoa",
-              price: 20,
-              type:"freeship",
-              time: 20
-          },
-          {
-              id : 4,
-              photoUrl : 'https://i.postimg.cc/wTFhqFqJ/taocos-4.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title: "Birria",
-              price: 12,
-              type: "freeship",
-              time: 20
-          },
-          {
-              id : 5,
-              photoUrl : 'https://i.postimg.cc/RC77842g/tacos-5.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title: "Buche",
-              price: 12.3,
-              type: "freeship",
-              time: 20
-          },
-          {
-              id : 6,
-              photoUrl : 'https://i.postimg.cc/8cZjSKRz/tacos-6.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title: "Cabeza",
-              price: 10,
-              type:"freeship",
-              time: 20
-          }
-      ],
-      whiteandbrowncooked:[
-        {
-              id : 1,
-              photoUrl : 'https://i.postimg.cc/fyfY0fYG/tacos-1.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title:"Al pastor",
-              price: 25,
-              type: "freeship",
-              time: 20
-          },
-          {
-              id : 2,
-              photoUrl : 'https://i.postimg.cc/X7nf6tb4/tacos-2.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title:"Tacos árabes",
-              price: 19,
-              type: "freeship",
-              time: 20
-          },
-          {
-              id : 3,
-              photoUrl : 'https://i.postimg.cc/dV1GLd3f/tacos-3.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title : "Barbacoa",
-              price: 20,
-              type:"freeship",
-              time: 20
-          },
-          {
-              id : 4,
-              photoUrl : 'https://i.postimg.cc/wTFhqFqJ/taocos-4.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title: "Birria",
-              price: 12,
-              type: "freeship",
-              time: 20
-          },
-          {
-              id : 5,
-              photoUrl : 'https://i.postimg.cc/RC77842g/tacos-5.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title: "Buche",
-              price: 12.3,
-              type: "freeship",
-              time: 20
-          },
-          {
-              id : 6,
-              photoUrl : 'https://i.postimg.cc/8cZjSKRz/tacos-6.jpg',
-              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-              title: "Cabeza",
-              price: 10,
-              type:"freeship",
-              time: 20
-          }
-      ],
-      fries: [
+      ]
+    },
+    beef: {
+      id : 4 ,
+      subTitle : 'Beef Steak with Sauce',
+      title : "beef",
+      routeName : 'Beef',
+      imageUrl : 'https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      price : 25,
+      reviews : "⭐⭐⭐⭐",
+      more: "2 package 🎁🎁",
+      extend : [
         {
               id : 1,
               photoUrl : 'https://i.postimg.cc/fyfY0fYG/tacos-1.jpg',
@@ -503,6 +262,336 @@ const FOOD_DATA = {
               time: 20
           }
       ]
+    },
+    pasta : {
+      id : 5 ,
+      subTitle : 'Cooked Pasta',
+      title : "pasta",
+      routeName : 'Pasta',
+      imageUrl : 'https://images.pexels.com/photos/803963/pexels-photo-803963.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      price : 25,
+      reviews : "⭐⭐⭐⭐",
+      more: "2 package 🎁🎁",
+      extend : [
+        {
+              id : 1,
+              photoUrl : 'https://i.postimg.cc/fyfY0fYG/tacos-1.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title:"Al pastor",
+              price: 25,
+              type: "freeship",
+              time: 20
+          },
+          {
+              id : 2,
+              photoUrl : 'https://i.postimg.cc/X7nf6tb4/tacos-2.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title:"Tacos árabes",
+              price: 19,
+              type: "freeship",
+              time: 20
+          },
+          {
+              id : 3,
+              photoUrl : 'https://i.postimg.cc/dV1GLd3f/tacos-3.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title : "Barbacoa",
+              price: 20,
+              type:"freeship",
+              time: 20
+          },
+          {
+              id : 4,
+              photoUrl : 'https://i.postimg.cc/wTFhqFqJ/taocos-4.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title: "Birria",
+              price: 12,
+              type: "freeship",
+              time: 20
+          },
+          {
+              id : 5,
+              photoUrl : 'https://i.postimg.cc/RC77842g/tacos-5.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title: "Buche",
+              price: 12.3,
+              type: "freeship",
+              time: 20
+          },
+          {
+              id : 6,
+              photoUrl : 'https://i.postimg.cc/8cZjSKRz/tacos-6.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title: "Cabeza",
+              price: 10,
+              type:"freeship",
+              time: 20
+          }
+      ]
+    },
+      palte: {
+        id : 6 ,
+        title : "palte",
+        subTitle : 'Food In a plate',
+        routeName : 'Plate',
+        imageUrl : 'https://images.pexels.com/photos/1860204/pexels-photo-1860204.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        price : 25,
+        reviews : "⭐⭐⭐⭐",
+        more: "2 package 🎁🎁",
+        extend : [
+          {
+              id : 1,
+              photoUrl : 'https://i.postimg.cc/fyfY0fYG/tacos-1.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title:"Al pastor",
+              price: 25,
+              type: "freeship",
+              time: 20
+          },
+          {
+              id : 2,
+              photoUrl : 'https://i.postimg.cc/X7nf6tb4/tacos-2.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title:"Tacos árabes",
+              price: 19,
+              type: "freeship",
+              time: 20
+          },
+          {
+              id : 3,
+              photoUrl : 'https://i.postimg.cc/dV1GLd3f/tacos-3.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title : "Barbacoa",
+              price: 20,
+              type:"freeship",
+              time: 20
+          },
+          {
+              id : 4,
+              photoUrl : 'https://i.postimg.cc/wTFhqFqJ/taocos-4.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title: "Birria",
+              price: 12,
+              type: "freeship",
+              time: 20
+          },
+          {
+              id : 5,
+              photoUrl : 'https://i.postimg.cc/RC77842g/tacos-5.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title: "Buche",
+              price: 12.3,
+              type: "freeship",
+              time: 20
+          },
+          {
+              id : 6,
+              photoUrl : 'https://i.postimg.cc/8cZjSKRz/tacos-6.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title: "Cabeza",
+              price: 10,
+              type:"freeship",
+              time: 20
+          }
+        ]
+      },
+      pizza : {
+        id : 7 ,
+        subTitle : 'Pizza',
+        title : "pizza",
+        routeName : 'Pizza',
+        imageUrl : 'https://images.pexels.com/photos/1653877/pexels-photo-1653877.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+        price : 25,
+        reviews : "⭐⭐⭐⭐",
+        more: "2 package 🎁🎁",
+        extend : [
+          {
+              id : 1,
+              photoUrl : 'https://i.postimg.cc/fyfY0fYG/tacos-1.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title:"Al pastor",
+              price: 25,
+              type: "freeship",
+              time: 20
+          },
+          {
+              id : 2,
+              photoUrl : 'https://i.postimg.cc/X7nf6tb4/tacos-2.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title:"Tacos árabes",
+              price: 19,
+              type: "freeship",
+              time: 20
+          },
+          {
+              id : 3,
+              photoUrl : 'https://i.postimg.cc/dV1GLd3f/tacos-3.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title : "Barbacoa",
+              price: 20,
+              type:"freeship",
+              time: 20
+          },
+          {
+              id : 4,
+              photoUrl : 'https://i.postimg.cc/wTFhqFqJ/taocos-4.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title: "Birria",
+              price: 12,
+              type: "freeship",
+              time: 20
+          },
+          {
+              id : 5,
+              photoUrl : 'https://i.postimg.cc/RC77842g/tacos-5.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title: "Buche",
+              price: 12.3,
+              type: "freeship",
+              time: 20
+          },
+          {
+              id : 6,
+              photoUrl : 'https://i.postimg.cc/8cZjSKRz/tacos-6.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title: "Cabeza",
+              price: 10,
+              type:"freeship",
+              time: 20
+          }
+        ]
+      },
+      whiteandbrowncooked : {
+        id : 8 ,
+        subTitle : 'White and Brown Cooked Dish',
+        routeName : 'WhiteandBrownCooked',
+        title : "WhiteandBrownCooked",
+        imageUrl : 'https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+        price : 25,
+        reviews : "⭐⭐⭐⭐",
+        more: "2 package 🎁🎁",
+        extend : [
+          {
+              id : 1,
+              photoUrl : 'https://i.postimg.cc/fyfY0fYG/tacos-1.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title:"Al pastor",
+              price: 25,
+              type: "freeship",
+              time: 20
+          },
+          {
+              id : 2,
+              photoUrl : 'https://i.postimg.cc/X7nf6tb4/tacos-2.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title:"Tacos árabes",
+              price: 19,
+              type: "freeship",
+              time: 20
+          },
+          {
+              id : 3,
+              photoUrl : 'https://i.postimg.cc/dV1GLd3f/tacos-3.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title : "Barbacoa",
+              price: 20,
+              type:"freeship",
+              time: 20
+          },
+          {
+              id : 4,
+              photoUrl : 'https://i.postimg.cc/wTFhqFqJ/taocos-4.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title: "Birria",
+              price: 12,
+              type: "freeship",
+              time: 20
+          },
+          {
+              id : 5,
+              photoUrl : 'https://i.postimg.cc/RC77842g/tacos-5.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title: "Buche",
+              price: 12.3,
+              type: "freeship",
+              time: 20
+          },
+          {
+              id : 6,
+              photoUrl : 'https://i.postimg.cc/8cZjSKRz/tacos-6.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title: "Cabeza",
+              price: 10,
+              type:"freeship",
+              time: 20
+          }
+        ]
+      },
+      fires: {
+        id : 9 ,
+        subTitle : 'Fries and Burger',
+        title : "fries",
+        routeName : 'Fries',
+        imageUrl : 'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        price : 25.99,
+        reviews : "⭐⭐⭐⭐",
+        more: "2 package 🎁🎁",
+        extend : [
+          {
+              id : 1,
+              photoUrl : 'https://i.postimg.cc/fyfY0fYG/tacos-1.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title:"Al pastor",
+              price: 25,
+              type: "freeship",
+              time: 20
+          },
+          {
+              id : 2,
+              photoUrl : 'https://i.postimg.cc/X7nf6tb4/tacos-2.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title:"Tacos árabes",
+              price: 19,
+              type: "freeship",
+              time: 20
+          },
+          {
+              id : 3,
+              photoUrl : 'https://i.postimg.cc/dV1GLd3f/tacos-3.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title : "Barbacoa",
+              price: 20,
+              type:"freeship",
+              time: 20
+          },
+          {
+              id : 4,
+              photoUrl : 'https://i.postimg.cc/wTFhqFqJ/taocos-4.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title: "Birria",
+              price: 12,
+              type: "freeship",
+              time: 20
+          },
+          {
+              id : 5,
+              photoUrl : 'https://i.postimg.cc/RC77842g/tacos-5.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title: "Buche",
+              price: 12.3,
+              type: "freeship",
+              time: 20
+          },
+          {
+              id : 6,
+              photoUrl : 'https://i.postimg.cc/8cZjSKRz/tacos-6.jpg',
+              descriptionItem : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+              title: "Cabeza",
+              price: 10,
+              type:"freeship",
+              time: 20
+          }
+        ]
+      }
   }
-  
-  export default FOOD_DATA;
+export default   FOOD_DATA;

@@ -19,6 +19,7 @@ class  CollectionPage extends React.Component {
 				<Switch>
 					<Route  exact 
 							path = {`${match.url}`} 
+							
 							component = {CollectionOverView}
 					/>	
 					<Route exact 

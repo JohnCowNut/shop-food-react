@@ -2,25 +2,22 @@ import React from 'react';
 import { connect } from 'react-redux'
 import CollectionItemContainer from './collection-detail.style';
 import CollectionItem from "../../components/collection-item/collection-item.component";
-import {selectoFoods} from '../../redux/shop_detail/shop_detail.selectors';
+import {selectorFoods} from '../../redux/shop_detail/shop_detail.selectors';
 
-import { firestore } from "../../firebase/firebase.utilis";
+import { firestore , convertCollectionSnapshotToMap} from "../../firebase/firebase.utilis";
 
 
 class CollectionDetail extends React.Component { 
 	componentDidMount() {
 			const collectionRef = firestore.collection("foods");
 			collectionRef.onSnapshot( async ( snapShot) => {
-				console.log(snapShot.docs[0].data())
+				convertCollectionSnapshotToMap(snapShot)
 			})
 	}
-    
 	render(){
 		const food = this.props.match.params.id;
-		const {foods} = this.props;
-		
-		let foodDisplay = Object.keys(foods).reduce((prev,next) => (prev = foods[food]),[])
-		console.log(foodDisplay)
+		const { foods } = this.props;
+		let foodDisplay = foods.find(el => el.title === food).extend
 		return (
 			<div>
 				<h2 className ="heading__primary mb-lg text-center">My Collection {food} </h2>
@@ -38,7 +35,7 @@ class CollectionDetail extends React.Component {
 
 
 const mapStateToProps = state => ({
-	foods : selectoFoods(state)
+	foods : selectorFoods(state)
 })
 
 export default connect(mapStateToProps)(CollectionDetail);

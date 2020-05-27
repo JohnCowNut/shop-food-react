@@ -3,7 +3,7 @@ import { ReactComponent as HotIcon } from "../../asset/svg/013-product.svg"
 import ButtonLink from '../custom-link/custom-link.component';
 import { withRouter } from "react-router-dom";
 import {MenuItemContainer , ImageContainer , ContainerMenuBody} from './menu-item.styles';
-const MenuItem = ({imageUrl,title,routeName,price,more,reviews,match,history}) => {
+const MenuItem = ({imageUrl,subTitle,routeName,price,more,reviews,match,history}) => {
 	return (
 
 		<MenuItemContainer style = {{backgroundColor : "beige"}}>
@@ -13,10 +13,10 @@ const MenuItem = ({imageUrl,title,routeName,price,more,reviews,match,history}) =
 			 <HotIcon as="svg" className= "hot"/>
 			 <ContainerMenuBody  className="cart__body">
 			 	<div className="text-center">
-			 		<h5 >{title}</h5>
+			 		<h5 >{subTitle}</h5>
 			 	</div>
 			 	<ul>
-			 		<li>From: {price} 💲</li>	
+			 		<li>From: {price} 💲💲</li>	
 			 		<li>More: {more}</li>
 			 		<li>Reviews: {reviews}</li>
 			 		<li>
@@ -24,7 +24,7 @@ const MenuItem = ({imageUrl,title,routeName,price,more,reviews,match,history}) =
 			 			onClick = {() => history.push(`${match.url}/${routeName.toLowerCase()}`)}>
 			 			More Details</ButtonLink>
 			 		</li>
-			 	</ul>
+			 	</ul>	
 			 </ContainerMenuBody>
 		</MenuItemContainer >
 	)

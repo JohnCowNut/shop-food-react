@@ -4,7 +4,8 @@ const shopDetailSelector = state => state.shopDetail;
 
 
 
-export const selectoFoods = createSelector(
+export const selectorFoods = createSelector(
     [shopDetailSelector],
-    shopDetail => shopDetail.foods
+    shopDetail => Object.keys(shopDetail.foods).map(el => shopDetail.foods[el])
 )
+
