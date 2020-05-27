@@ -3,16 +3,14 @@ import { connect } from 'react-redux'
 import CollectionItemContainer from './collection-detail.style';
 import CollectionItem from "../../components/collection-item/collection-item.component";
 import {selectorFoods} from '../../redux/shop_detail/shop_detail.selectors';
-
-import { firestore , convertCollectionSnapshotToMap} from "../../firebase/firebase.utilis";
-
-
 class CollectionDetail extends React.Component { 
 	componentDidMount() {
-			const collectionRef = firestore.collection("foods");
-			collectionRef.onSnapshot( async ( snapShot) => {
-				convertCollectionSnapshotToMap(snapShot)
-			})
+			// const collectionRef = firestore.collection("foods");
+			// collectionRef.onSnapshot( async ( snapShot) => {
+			// 	var a = convertCollectionSnapshotToMap(snapShot);
+			// 	console.log(a)
+			// })
+
 	}
 	render(){
 		const food = this.props.match.params.id;

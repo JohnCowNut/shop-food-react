@@ -45,7 +45,10 @@ class CheckoutPage extends React.Component {
 	        	<TotalContainer >
             		<span>TOTAL: {totalMoney}$</span>
         		</TotalContainer>
-        		<StripeButton price ={totalMoney} />
+        		{
+        			totalMoney ? <StripeButton price ={totalMoney} /> :  <span></span>
+        		}
+        		
 	        </CheckOutPageContainer>
 
 		);
@@ -57,5 +60,4 @@ const mapStateToProps = state => ({
 	cartFood : selectCartFood(state),
 	totalMoney : selectToTalFood(state)
 })
-
 export default connect(mapStateToProps)(CheckoutPage);

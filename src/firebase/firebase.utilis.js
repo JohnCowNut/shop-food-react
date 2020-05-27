@@ -49,10 +49,15 @@ export const addCollectionAndItems = async (collectionKey, objectToAdd) => {
 
 export const convertCollectionSnapshotToMap  = collections => {
 	const tranfromedCollection = collections.docs.map( doc => {
-		const {extend , title} = doc.data();
+		const {extend,reviews, imageUrl,more,title,routeName,subTitle} = doc.data();
 		return {
 			title,
 			id : doc.id,
+			imageUrl,
+			more,
+			reviews,
+			subTitle,
+			routeName,
 			extend
 		}
 	})
