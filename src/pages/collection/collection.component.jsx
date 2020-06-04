@@ -5,9 +5,15 @@ import CollectionDetail from '../collection-detail/collection-detail.component';
 import CollectionOverView from '../../components/collection-overview/collection-overview.component';
 import { firestore , convertCollectionSnapshotToMap} from "../../firebase/firebase.utilis";
 import {getDataFromFirebase} from '../../redux/shop_detail/shop_detail.action';
+import WithSpiner from '../../components/with-spinner/with-spinner.component';
 
 
+const WrapCollectionDetailSpiner = WithSpiner(CollectionDetail);
+const WrapCollectionOverView = WithSpiner(CollectionOverView);
 class  CollectionPage extends React.Component {
+	state = {
+		isLoading : true
+	}
 	componentDidMount() {
 		const { getDataFromFirebase }  = this.props;
 		document.body.style.backgroundImage = "none";
@@ -15,6 +21,7 @@ class  CollectionPage extends React.Component {
 		collectionRef.onSnapshot( async snapShot => {
 			let dataObject = convertCollectionSnapshotToMap(snapShot);
 			getDataFromFirebase(dataObject);
+			this.setState({isLoading: false})
 		})
 	}
 	componentWillUnmount() {
@@ -27,12 +34,14 @@ class  CollectionPage extends React.Component {
 				<Switch>
 					<Route  exact 
 							path = {`${match.url}`} 
+							render = {(props) => <WrapCollectionOverView
+							isLoading ={this.state.isLoading} {...props}/>}
 							
-							component = {CollectionOverView}
 					/>	
 					<Route exact 
 						   path = {`${match.url}/:id`} 
-						   component ={CollectionDetail}
+						   render ={(props) => <WrapCollectionDetailSpiner  
+						   isLoading ={this.state.isLoading} {...props}/>}
 					/>
 				</Switch>
 			</div>

@@ -1,4 +1,3 @@
-import FOOD_DATA from './shop_detail.data';
 import SHOP_DETAIL_ACTION_TYPES from './shop_detail.types';
 const INITIAL_STATE = {
     foods: null
